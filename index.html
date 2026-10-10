@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>م. خالد | استوديو التصميم المعماري والديكور</title>
+    <title>المهندس خالد | خدمات التصميم المعماري والديكور الداخلي</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary: #121A24;
-            --secondary: #1E293B;
-            --accent: #C5A880;
-            --accent-hover: #B09268;
-            --text-light: #F8FAFC;
-            --text-dark: #0F172A;
-            --text-muted: #64748B;
-            --bg-light: #F8FAFC;
-            --card-bg: #FFFFFF;
-            --border: #E2E8F0;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-dark: #0B0F17;
+            --bg-surface: #131A26;
+            --accent-gold: #C5A880;
+            --accent-gold-hover: #D4B991;
+            --text-main: #FFFFFF;
+            --text-muted: #94A3B8;
+            --border-color: rgba(197, 168, 128, 0.2);
+            --transition: all 0.4s ease;
         }
 
         * {
@@ -37,48 +34,65 @@
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
             overflow-x: hidden;
+        }
+
+        /* Top Header Announcement */
+        .top-bar {
+            background: linear-gradient(90deg, #0B0F17 0%, #1A2332 50%, #0B0F17 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 8px 5%;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.5px;
         }
 
         /* Navigation Bar */
         .navbar {
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
-            background: rgba(18, 26, 36, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(11, 15, 23, 0.95);
+            backdrop-filter: blur(12px);
             z-index: 1000;
-            padding: 1rem 5%;
+            padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
             text-decoration: none;
         }
 
+        /* Enlarged Logo */
         .logo-img {
-            height: 48px;
+            height: 75px;
             width: auto;
             object-fit: contain;
+            transition: var(--transition);
+            filter: drop-shadow(0px 2px 8px rgba(197, 168, 128, 0.2));
+        }
+
+        .logo-img:hover {
+            transform: scale(1.03);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.2rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: var(--text-main);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -86,33 +100,35 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--accent-gold);
         }
 
-        .btn-consult {
-            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
-            color: #fff !important;
-            padding: 0.6rem 1.4rem;
-            border-radius: 6px;
+        .btn-gold {
+            background: linear-gradient(135deg, var(--accent-gold), #A38458);
+            color: #0B0F17 !important;
+            padding: 0.75rem 1.8rem;
+            border-radius: 4px;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+            text-decoration: none;
+            transition: var(--transition);
+            letter-spacing: 0.3px;
         }
 
-        .btn-consult:hover {
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--accent-gold-hover), var(--accent-gold));
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(197, 168, 128, 0.4);
+            box-shadow: 0 10px 25px rgba(197, 168, 128, 0.3);
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, rgba(18, 26, 36, 0.92) 0%, rgba(30, 41, 59, 0.85) 100%), 
+            min-height: 85vh;
+            background: linear-gradient(180deg, rgba(11, 15, 23, 0.85) 0%, rgba(11, 15, 23, 0.98) 100%), 
                         url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 120px 5% 60px;
-            color: var(--text-light);
+            padding: 80px 5% 60px;
             text-align: center;
             position: relative;
         }
@@ -121,385 +137,359 @@
             max-width: 900px;
         }
 
-        .hero-badge {
+        .hero-tag {
             display: inline-block;
-            background: rgba(197, 168, 128, 0.15);
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 6px 20px;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            letter-spacing: 1.5px;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
         .hero-title {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.2rem;
+            line-height: 1.25;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
             font-size: 1.2rem;
-            color: #CBD5E1;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 400;
         }
 
-        .hero-actions {
+        .hero-btns {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background: var(--accent);
-            color: #fff;
-            padding: 0.9rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
+        .btn-outline-gold {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 0.75rem 1.8rem;
+            border-radius: 4px;
             font-weight: 700;
+            text-decoration: none;
             transition: var(--transition);
         }
 
-        .btn-primary:hover {
-            background: var(--accent-hover);
-            transform: translateY(-3px);
+        .btn-outline-gold:hover {
+            background: rgba(197, 168, 128, 0.1);
+            color: #FFF;
         }
 
-        .btn-outline {
-            border: 2px solid var(--text-light);
-            color: var(--text-light);
-            padding: 0.9rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: var(--transition);
-        }
-
-        .btn-outline:hover {
-            background: var(--text-light);
-            color: var(--primary);
-        }
-
-        /* Section Layout */
+        /* Section Settings */
         .section {
             padding: 100px 5%;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         .section-subtitle {
-            color: var(--accent);
+            color: var(--accent-gold);
+            font-size: 0.85rem;
             font-weight: 700;
-            font-size: 0.95rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            letter-spacing: 1px;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .section-title {
-            font-size: 2.2rem;
-            color: var(--primary);
+            font-size: 2.4rem;
             font-weight: 800;
+            color: var(--text-main);
         }
 
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            max-width: 1200px;
+        /* About Architect Section (Without Personal Photo) */
+        .about-section {
+            background-color: var(--bg-surface);
+            border-top: 1px solid rgba(255,255,255,0.03);
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .about-box {
+            max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .about-image {
+            background: rgba(11, 15, 23, 0.6);
+            border: 1px solid var(--border-color);
+            padding: 50px;
+            border-radius: 8px;
             position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .about-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .about-badge {
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary);
-            color: var(--text-light);
-            padding: 20px 30px;
-            border-radius: 12px;
-            border-right: 4px solid var(--accent);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .about-badge h4 {
+        .about-title-large {
             font-size: 2rem;
-            color: var(--accent);
-            line-height: 1;
-        }
-
-        .about-content h3 {
-            font-size: 1.8rem;
+            color: var(--accent-gold);
             margin-bottom: 1.5rem;
-            color: var(--primary);
+            font-weight: 700;
         }
 
-        .about-content p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
+        .about-text {
+            color: #CBD5E1;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
         }
 
-        .stats-list {
+        .about-features {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 30px;
         }
 
-        .stat-item {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
+        .feat-item {
+            text-align: center;
         }
 
-        .stat-number {
+        .feat-item i {
             font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--accent);
+            color: var(--accent-gold);
+            margin-bottom: 12px;
         }
 
-        .stat-label {
-            font-size: 0.9rem;
+        .feat-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .feat-item p {
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
-        /* Services Section */
-        .services-bg {
-            background-color: #F1F5F9;
-        }
-
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .service-card {
-            background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
+            background: var(--bg-surface);
+            padding: 45px 35px;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 6px;
             transition: var(--transition);
+            position: relative;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            border-color: var(--accent);
+            border-color: var(--accent-gold);
+            transform: translateY(-6px);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(197, 168, 128, 0.12);
-            color: var(--accent);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.8rem;
         }
 
         .service-title {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--primary);
         }
 
         .service-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
+            line-height: 1.7;
         }
 
-        /* Portfolio */
+        /* Portfolio Showcase */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .portfolio-item {
-            border-radius: 16px;
-            overflow: hidden;
+        .portfolio-card {
             position: relative;
-            height: 380px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            height: 420px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .portfolio-item img {
+        .portfolio-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
 
-        .portfolio-overlay {
+        .portfolio-info {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(18, 26, 36, 0.95), transparent);
+            background: linear-gradient(to top, rgba(11, 15, 23, 0.95) 0%, rgba(11, 15, 23, 0.2) 60%, transparent 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 30px;
-            opacity: 0;
+            padding: 35px;
+            opacity: 0.9;
             transition: var(--transition);
         }
 
-        .portfolio-item:hover img {
-            transform: scale(1.08);
+        .portfolio-card:hover img {
+            transform: scale(1.06);
         }
 
-        .portfolio-item:hover .portfolio-overlay {
+        .portfolio-card:hover .portfolio-info {
             opacity: 1;
         }
 
-        .portfolio-cat {
-            color: var(--accent);
-            font-size: 0.85rem;
+        .portfolio-category {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
             font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
         }
 
-        .portfolio-title {
-            color: #fff;
+        .portfolio-name {
             font-size: 1.4rem;
-            margin-top: 5px;
+            font-weight: 700;
+            color: #FFF;
         }
 
-        /* Pricing Packages Section */
-        .packages-bg {
-            background-color: var(--primary);
-            color: var(--text-light);
+        /* Pricing Section */
+        .pricing-section {
+            background-color: var(--bg-surface);
         }
 
-        .packages-bg .section-title {
-            color: var(--text-light);
-        }
-
-        .disclaimer-box {
-            background: rgba(197, 168, 128, 0.1);
-            border: 1px solid var(--accent);
-            padding: 20px;
-            border-radius: 12px;
-            max-width: 900px;
-            margin: 0 auto 50px;
+        .disclaimer-banner {
+            background: rgba(197, 168, 128, 0.08);
+            border: 1px solid var(--accent-gold);
+            padding: 22px 30px;
+            border-radius: 6px;
+            max-width: 950px;
+            margin: 0 auto 60px;
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.8;
+            color: #E2E8F0;
         }
 
-        .disclaimer-box i {
-            color: var(--accent);
-            margin-left: 8px;
+        .disclaimer-banner i {
+            color: var(--accent-gold);
+            margin-left: 10px;
+            font-size: 1.1rem;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .pricing-card {
-            background: var(--secondary);
-            border-radius: 16px;
-            padding: 40px 30px;
-            border: 1px solid rgba(255,255,255,0.1);
+            background: var(--bg-dark);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 45px 35px;
+            border-radius: 6px;
             display: flex;
             flex-direction: column;
             position: relative;
+            transition: var(--transition);
         }
 
         .pricing-card.featured {
-            border-color: var(--accent);
-            box-shadow: 0 0 30px rgba(197, 168, 128, 0.2);
+            border-color: var(--accent-gold);
+            box-shadow: 0 10px 40px rgba(197, 168, 128, 0.12);
         }
 
-        .badge-popular {
+        .featured-tag {
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: #fff;
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
+            top: -14px;
+            right: 30px;
+            background: var(--accent-gold);
+            color: #0B0F17;
+            padding: 2px 14px;
+            border-radius: 2px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
-        .pricing-header h4 {
+        .plan-name {
             font-size: 1.4rem;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
-        .pricing-price {
+        .plan-price {
             font-size: 2.2rem;
             font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 20px;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
         }
 
-        .pricing-features {
+        .plan-price small {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .plan-list {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             flex-grow: 1;
         }
 
-        .pricing-features li {
-            margin-bottom: 12px;
+        .plan-list li {
+            margin-bottom: 14px;
             font-size: 0.95rem;
-            color: #CBD5E1;
+            color: var(--text-muted);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .pricing-features li i {
-            color: var(--accent);
+        .plan-list li i {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
         }
 
-        /* Booking Section */
-        .booking-container {
-            max-width: 800px;
+        /* Booking / Contact */
+        .contact-box {
+            max-width: 850px;
             margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid var(--border);
+            background: var(--bg-surface);
+            padding: 50px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 20px;
         }
 
         .form-group {
@@ -508,348 +498,344 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--accent-gold);
             font-weight: 600;
-            color: var(--primary);
         }
 
-        .form-control {
+        .form-input {
             width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 1rem;
+            background: var(--bg-dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #FFF;
+            padding: 14px 18px;
+            border-radius: 4px;
+            font-size: 0.95rem;
             transition: var(--transition);
         }
 
-        .form-control:focus {
+        .form-input:focus {
             outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.2);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            border-color: var(--accent-gold);
         }
 
         /* Footer */
         footer {
-            background: var(--primary);
-            color: var(--text-light);
-            padding: 60px 5% 30px;
+            background-color: #070A0F;
             border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 70px 5% 30px;
         }
 
-        .footer-grid {
+        .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
             max-width: 1200px;
-            margin: 0 auto 40px;
+            margin: 0 auto 50px;
         }
 
-        .footer-logo img {
-            height: 45px;
-            margin-bottom: 15px;
-        }
-
-        .footer-about p {
-            color: #94A3B8;
-            font-size: 0.95rem;
-        }
-
-        .footer-links h5 {
-            color: var(--accent);
-            font-size: 1.1rem;
+        .footer-logo {
+            height: 70px;
             margin-bottom: 20px;
         }
 
-        .footer-links ul {
+        .footer-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 400px;
+        }
+
+        .footer-title {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links-list {
             list-style: none;
         }
 
-        .footer-links li {
-            margin-bottom: 10px;
+        .footer-links-list li {
+            margin-bottom: 12px;
         }
 
-        .footer-links a {
-            color: #94A3B8;
+        .footer-links-list a {
+            color: var(--text-muted);
             text-decoration: none;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
-        .footer-links a:hover {
-            color: var(--text-light);
+        .footer-links-list a:hover {
+            color: var(--text-main);
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.05);
-            color: #64748B;
-            font-size: 0.9rem;
+            padding-top: 30px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero-title { font-size: 2.2rem; }
-            .about-grid { grid-template-columns: 1fr; }
+            .about-features { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Top Announcement -->
+    <div class="top-bar">
+        استشارات معمارية وتصاميم هندسية متكاملة للمشاريع السكنية والتجارية
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <a href="#" class="logo-container">
-            <img src="https://files.catbox.moe/uunnpv.png" alt="م. خالد" class="logo-img">
+            <img src="https://files.catbox.moe/uunnpv.png" alt="المهندس خالد" class="logo-img">
         </a>
         <ul class="nav-links">
             <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#about">عن المهندس</a></li>
-            <li><a href="#services">الخدمات</a></li>
-            <li><a href="#portfolio">معرض الأعمال</a></li>
+            <li><a href="#about">عن المهندس خالد</a></li>
+            <li><a href="#services">الخدمات الهندسية</a></li>
+            <li><a href="#portfolio">المشاريع</a></li>
             <li><a href="#packages">الباقات</a></li>
-            <li><a href="#contact" class="btn-consult">حجز استشارة</a></li>
         </ul>
+        <a href="#contact" class="btn-gold">حجز استشارة</a>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <span class="hero-badge">استوديو الهندسة والتصميم المعماري</span>
-            <h1 class="hero-title">نحول أفكارك إلى تحف معمارية تعكس هويتك</h1>
-            <p class="hero-subtitle">تصاميم معمارية وداخلية تجمع بين الفخامة، الوظيفة، واستغلال المساحات بأعلى معايير الجودة، بإشراف م. خالد.</p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">حجز جلسة استشارية</a>
-                <a href="#portfolio" class="btn-outline">استعراض الأعمال</a>
+            <span class="hero-tag">Architectural & Interior Design</span>
+            <h1 class="hero-title">المهندس خالد للتصميم المعماري والديكور</h1>
+            <p class="hero-subtitle">نبتكر المساحات المعمارية الفاخرة ونحول الرؤى إلى واقع يجمع بين جمالية الهندسة ودقة التخطيط للمشاريع السكنية والتجارية.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-gold">حجز موعد استشارة</a>
+                <a href="#portfolio" class="btn-outline-gold">استعراض المشاريع</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="about-grid">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="م. خالد">
-                <div class="about-badge">
-                    <h4>+8</h4>
-                    <span>سنوات من الإبداع المعماري</span>
+    <!-- About Section (No personal photo) -->
+    <section class="section about-section" id="about">
+        <div class="about-box">
+            <span class="section-subtitle">الرؤية والنهج المعماري</span>
+            <h2 class="about-title-large">المهندس خالد | رؤية هندسية مبتكرة</h2>
+            <p class="about-text">
+                يقدم **المهندس خالد** حلولاً معمارية وتصاميم داخلية متكاملة تقوم على دراسة الفراغات والمساحات بأعلى المعايير الهندسيّة. نعتمد على التحليل الدقيق لاحتياجات العملاء لتقديم بيئة سكنية أو تجارية تحقق الاستغلال الأمثل للمساحة، الاتزان البصري، والجودة العالية في الاختيارات والتنفيذ.
+            </p>
+            <div class="about-features">
+                <div class="feat-item">
+                    <i class="fa-solid fa-drafting-compass"></i>
+                    <h4>دقة المخططات</h4>
+                    <p>دراسة هندسية كاملة للمساحات وتوفير مخططات تنفيدية بدقة عالية.</p>
                 </div>
-            </div>
-            <div class="about-content">
-                <span class="section-subtitle">من نحن</span>
-                <h3>م. خالد | مهندس معماري ومصمم ديكور</h3>
-                <p>نعمل في استوديو m.khaled المعماري على تقديم حلول هندسية مبتكرة تجمع بين الجمالية العصرية والوظيفة العملية. نحن نؤمن بأن كل مساحة لها قصتها الخاصة التي تستحق أن تروى بأعلى درجات الإتقان والتميز.</p>
-                
-                <div class="stats-list">
-                    <div class="stat-item">
-                        <div class="stat-number">+60</div>
-                        <div class="stat-label">مشروع مكتمل</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">رضا العملاء</div>
-                    </div>
+                <div class="feat-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h4>تكامل التصميم</h4>
+                    <p>تناغم تام بين الواجهات الخارجية، الديكور الداخلي، وأنظمة الإضاءة.</p>
+                </div>
+                <div class="feat-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h4>استغلال المساحات</h4>
+                    <p>توفير أقصى قدر من الوظيفة والجمال في كل متر مربع من العقار.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="section services-bg" id="services">
+    <section class="section" id="services">
         <div class="section-header">
-            <span class="section-subtitle">مجالات الاختصاص</span>
-            <h2 class="section-title">خدماتنا الهندسية الشاملة</h2>
+            <span class="section-subtitle">الخدمات المتاحة</span>
+            <h2 class="section-title">مجالات الاختصاص والتصميم</h2>
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                <div class="service-icon"><i class="fa-solid fa-building-columns"></i></div>
                 <h3 class="service-title">التصميم المعماري</h3>
-                <p class="service-desc">تطوير مخططات سكنية وتجارية متكاملة بأسلوب عصري يراعي استغلال المساحات وتأمين أعلى درجات الراحة.</p>
+                <p class="service-desc">تطوير وتصميم الواجهات والمخططات المعمارية الشاملة للفيال، المباني السكنية، والمجمعات التجارية وفق كود البناء الحديث.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-couch"></i></div>
                 <h3 class="service-title">التصميم الداخلي والديكور</h3>
-                <p class="service-desc">تنسيق الفراغات، اختيار الخامات، الأثاث، والإضاءة لخلق بيئة داخلية راقية تعكس ذوقك الخاص.</p>
+                <p class="service-desc">إعداد المخططات التنفيذية للديكور الداخلي، توزيع الأثاث، واختيار الخامات والإضاءة لخلق أجواء مخصصة وراقية.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-helmet-safety"></i></div>
-                <h3 class="service-title">الإشراف الهندسي</h3>
-                <p class="service-desc">متابعة دقيقة لمراحل التنفيذ بالموقع لضمان التطابق التام مع المخططات المعمارية ومواصفات الجودة.</p>
+                <div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                <h3 class="service-title">الإشراف الهندسي والاستشارات</h3>
+                <p class="service-desc">تقديم استشارات هندسية متخصصة ومتابعة مراحل التنفيذ الميداني لضمان مطابقة العمل مع المخططات المعتمدة.</p>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section class="section" id="portfolio">
+    <section class="section" id="portfolio" style="background: var(--bg-surface);">
         <div class="section-header">
-            <span class="section-subtitle">معرض الأعمال</span>
-            <h2 class="section-title">مشاريع تم تنفيذها بإتقان</h2>
+            <span class="section-subtitle">سجل الأعمال</span>
+            <h2 class="section-title">مشاريع معمارية مختارة</h2>
         </div>
         <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="فيلا مودرن">
-                <div class="portfolio-overlay">
-                    <span class="portfolio-cat">تصميم معماري سكني</span>
-                    <h3 class="portfolio-title">فيلا مودرن فاخرة - الرياض</h3>
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="مشروع سكني">
+                <div class="portfolio-info">
+                    <span class="portfolio-category">تصميم معماري سكني</span>
+                    <h3 class="portfolio-name">فيلا مودرن فاخرة</h3>
                 </div>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-card">
                 <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="تصميم داخلي">
-                <div class="portfolio-overlay">
-                    <span class="portfolio-cat">تصميم داخلي</span>
-                    <h3 class="portfolio-title">شقة سكنية بأسلوب مينيماليست</h3>
+                <div class="portfolio-info">
+                    <span class="portfolio-category">تصميم داخلي وديكور</span>
+                    <h3 class="portfolio-name">تصميم مجلس وصالة ضيافة</h3>
                 </div>
             </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="مجمع تجاري">
-                <div class="portfolio-overlay">
-                    <span class="portfolio-cat">تجاري</span>
-                    <h3 class="portfolio-title">معرض ومكاتب تجارية حديثة</h3>
+            <div class="portfolio-card">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="مشروع تجاري">
+                <div class="portfolio-info">
+                    <span class="portfolio-category">تصميم تجاري</span>
+                    <h3 class="portfolio-name">معرض ومقر إداري حديث</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Packages Section -->
-    <section class="section packages-bg" id="packages">
+    <section class="section pricing-section" id="packages">
         <div class="section-header">
-            <span class="section-subtitle">باقات الخدمات</span>
-            <h2 class="section-title">اختر الباقة المناسبة لمشروعك</h2>
+            <span class="section-subtitle">الباقات والأسعار</span>
+            <h2 class="section-title">باقات العمل وتطوير المتاجر/المواقع</h2>
         </div>
 
-        <div class="disclaimer-box">
+        <div class="disclaimer-banner">
             <i class="fa-solid fa-circle-info"></i>
-            <strong>تنبيه هام للعملاء الكرام:</strong>
-            أسعار الباقات أعلاه مخصصة لخدمات التصميم، التنسيق، والتطوير الهندسي فقط، <strong>ولا تشمل</strong> رسوم اشتراك منصة سلة، سعر الثيم المدفوع، أو قيمة حجز الدومين (النطاق).
+            <strong>توضيح هام للعملاء:</strong>
+            أسعار الباقات الواردة مخصصة لخدمات التصميم، التنسيق، والبرمجة الهندسية فقط، **ولا تشمل** رسوم اشتراك منصة سلة، سعر الثيم المدفوع، أو قيمة حجز الدومين (النطاق).  
             <br>
-            <em>* نلتزم دائماً بالعمل على <strong>ثيم احترافي ومهيأ بالكامل</strong> حتى في أسرع وأقل الباقات لضمان تقديم عمل رفيع المستوى.</em>
+            <em>* نعمل دائماً وحتى في أسرع وأقل الباقات على <strong>ثيم احترافي ومهيأ بالكامل</strong> لضمان ظهور موقعك بأعلى معايير الجودة والاحترافية.</em>
         </div>
 
         <div class="pricing-grid">
-            <!-- Package 1 -->
+            <!-- Plan 1 -->
             <div class="pricing-card">
-                <div class="pricing-header">
-                    <h4>الباقة الأساسية</h4>
-                    <div class="pricing-price">2,500 <small style="font-size:1rem;">ر.س</small></div>
-                </div>
-                <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> تصميم ثيم احترافي ومهيأ بالكامل</li>
-                    <li><i class="fa-solid fa-check"></i> مخطط معمار مبدئي 2D</li>
-                    <li><i class="fa-solid fa-check"></i> توزيع الأثاث والمساحات</li>
-                    <li><i class="fa-solid fa-check"></i> تعديلين على التصميم</li>
+                <div class="plan-name">الباقة الأساسية</div>
+                <div class="plan-price">2,500 <small>ر.س</small></div>
+                <ul class="plan-list">
+                    <li><i class="fa-solid fa-check"></i> العمل على ثيم احترافي ومهيأ بالكامل</li>
+                    <li><i class="fa-solid fa-check"></i> تصميم مخطط معماري 2D لمساحة واحدة</li>
+                    <li><i class="fa-solid fa-check"></i> توزيع المخطط الوظيفي للأثاث</li>
+                    <li><i class="fa-solid fa-check"></i> تعديلين مجاناً على المشروع</li>
                 </ul>
-                <a href="#contact" class="btn-primary" style="text-align:center;">طلب الباقة</a>
+                <a href="#contact" class="btn-outline-gold" style="text-align:center;">طلب الباقة</a>
             </div>
 
-            <!-- Package 2 (Featured) -->
+            <!-- Plan 2 (Featured) -->
             <div class="pricing-card featured">
-                <span class="badge-popular">الأكثر طلباً</span>
-                <div class="pricing-header">
-                    <h4>الباقة المتقدمة</h4>
-                    <div class="pricing-price">4,800 <small style="font-size:1rem;">ر.س</small></div>
-                </div>
-                <ul class="pricing-features">
+                <span class="featured-tag">الأكثر طلباً</span>
+                <div class="plan-name">الباقة المتقدمة</div>
+                <div class="plan-price">4,800 <small>ر.س</small></div>
+                <ul class="plan-list">
                     <li><i class="fa-solid fa-check"></i> ثيم مخصص واحترافي 100%</li>
-                    <li><i class="fa-solid fa-check"></i> تصميم 3D متكامل للواجهات</li>
-                    <li><i class="fa-solid fa-check"></i> جدول خامات ومواصفات التنفيذ</li>
+                    <li><i class="fa-solid fa-check"></i> تصميم 3D متكامل للواجهات والديكور</li>
+                    <li><i class="fa-solid fa-check"></i> جدول خامات ومواصفات المواد</li>
                     <li><i class="fa-solid fa-check"></i> 4 تعديلات مجانية</li>
                 </ul>
-                <a href="#contact" class="btn-primary" style="text-align:center;">طلب الباقة</a>
+                <a href="#contact" class="btn-gold" style="text-align:center;">طلب الباقة</a>
             </div>
 
-            <!-- Package 3 -->
+            <!-- Plan 3 -->
             <div class="pricing-card">
-                <div class="pricing-header">
-                    <h4>الباقة الشاملة</h4>
-                    <div class="pricing-price">8,500 <small style="font-size:1rem;">ر.س</small></div>
-                </div>
-                <ul class="pricing-features">
-                    <li><i class="fa-solid fa-check"></i> تصميم معماري وداخلي متكامل</li>
-                    <li><i class="fa-solid fa-check"></i> صور رندر عالية الجودة (VR 360)</li>
-                    <li><i class="fa-solid fa-check"></i> الإشراف المباشر على الموقع</li>
+                <div class="plan-name">الباقة الشاملة</div>
+                <div class="plan-price">8,500 <small>ر.س</small></div>
+                <ul class="plan-list">
+                    <li><i class="fa-solid fa-check"></i> تصميم معماري وداخلي متكامل للمشروع</li>
+                    <li><i class="fa-solid fa-check"></i> رندر عالي الجودة لجميع الأركان</li>
+                    <li><i class="fa-solid fa-check"></i> الإشراف الهندسي المباشر على الموقع</li>
                     <li><i class="fa-solid fa-check"></i> دعم وتعديلات مفتوحة</li>
                 </ul>
-                <a href="#contact" class="btn-primary" style="text-align:center;">طلب الباقة</a>
+                <a href="#contact" class="btn-outline-gold" style="text-align:center;">طلب الباقة</a>
             </div>
         </div>
     </section>
 
-    <!-- Booking Form Section -->
+    <!-- Booking Section -->
     <section class="section" id="contact">
         <div class="section-header">
-            <span class="section-subtitle">تواصل معنا</span>
-            <h2 class="section-title">حجز جلسة استشارية مع م. خالد</h2>
+            <span class="section-subtitle">طلب خدمة</span>
+            <h2 class="section-title">حجز جلسة استشارية مع المهندس خالد</h2>
         </div>
-        <div class="booking-container">
+        <div class="contact-box">
             <form action="#" method="POST">
                 <div class="form-row">
                     <div class="form-group">
-                        <label>الاسم الكامل</label>
-                        <input type="text" class="form-control" placeholder="أدخل اسمك الكريم" required>
+                        <label>الاسم الكريم</label>
+                        <input type="text" class="form-input" placeholder="أدخل اسمك" required>
                     </div>
                     <div class="form-group">
                         <label>رقم الجوال</label>
-                        <input type="tel" class="form-control" placeholder="05xxxxxxxx" required>
+                        <input type="tel" class="form-input" placeholder="05xxxxxxxx" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>نوع الخدمة المطلوبة</label>
-                        <select class="form-control">
+
+                        <select class="form-input" style="cursor: pointer;">
                             <option>تصميم معماري</option>
                             <option>تصميم داخلي وديكور</option>
-                            <option>استشارة هندسية أونلاين</option>
-                            <option>إشراف على مشروع</option>
+                            <option>استشارة هندسية</option>
+                            <option>إشراف على تنفيذ موقع</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>الموعد المفضل</label>
-                        <input type="date" class="form-control" required>
+                        <label>الموعد المقترح</label>
+                        <input type="date" class="form-input" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>تفاصيل المشروع أو الاستفسار</label>
-                    <textarea class="form-control" rows="4" placeholder="اكتب نبذة مختصرة عن مساحة العقار أو متطلباتك..."></textarea>
+                    <label>تفاصيل المشروع أو المساحة</label>
+                    <textarea class="form-input" rows="4" placeholder="اذكر نوع العقار (فيلا، شقة، معرض تجاري) والمساحة أو أي تفاصيل إضافية..."></textarea>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; font-size: 1.1rem;">تأكيد حجز الموعد</button>
+                <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer; font-size: 1.05rem; padding: 16px;">إرسال طلب الحجز</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-about">
-                <div class="footer-logo">
-                    <img src="https://files.catbox.moe/uunnpv.png" alt="م. خالد">
-                </div>
-                <p>استوديو هندسي مخصص لتقديم أرقى تصاميم المعمار والديكور الداخلي بلمسات مخصصة وحلول مستدامة.</p>
+        <div class="footer-content">
+            <div>
+                <img src="https://files.catbox.moe/uunnpv.png" alt="المهندس خالد" class="footer-logo">
+                <p class="footer-desc">خدمات تصميم معمار وديكور داخلي متكاملة بأسلوب عصري يضمن أقصى درجات الفخامة واستغلال المساحة للمشاريع الفاخرة.</p>
             </div>
-            <div class="footer-links">
-                <h5>روابط السريعة</h5>
-                <ul>
+            <div>
+                <h4 class="footer-title">الروابط</h4>
+                <ul class="footer-links-list">
                     <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#about">عن المهندس</a></li>
+                    <li><a href="#about">عن المهندس خالد</a></li>
                     <li><a href="#services">الخدمات</a></li>
                     <li><a href="#packages">الباقات</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
-                <h5>تواصل معنا</h5>
-                <ul>
-                    <li><i class="fa-solid fa-phone" style="margin-left:8px; color:var(--accent);"></i> 966500000000+</li>
-                    <li><i class="fa-solid fa-envelope" style="margin-left:8px; color:var(--accent);"></i> info@m-khaled.com</li>
-                    <li><i class="fa-solid fa-location-dot" style="margin-left:8px; color:var(--accent);"></i> المملكة العربية السعودية</li>
+            <div>
+                <h4 class="footer-title">التواصل</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#"><i class="fa-solid fa-phone" style="margin-left: 8px; color: var(--accent-gold);"></i> 0500000000</a></li>
+                    <li><a href="#"><i class="fa-solid fa-envelope" style="margin-left: 8px; color: var(--accent-gold);"></i> contact@eng-khaled.com</a></li>
+                    <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-left: 8px; color: var(--accent-gold);"></i> المملكة العربية السعودية</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            جميع الحقوق محفوظة © 2026 لموقع المهندس خالد m.khaled
+            جميع الحقوق محفوظة © 2026 - موقع المهندس خالد
         </div>
     </footer>
 
